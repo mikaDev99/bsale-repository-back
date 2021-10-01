@@ -2,7 +2,6 @@ const { Router } = require("express");
 const { listProduct, searchProducts } = require("../controllers/product");
 const router = Router();
 
-
 // List Product
 router.get('/list', listProduct);
 

@@ -7,23 +7,21 @@ require('dotenv').config();
 
 bodyParser = require('body-parser');
 
-//conection Data Base
+//connection Data Base
 conectionDB();
-
-
-//Ruta publica
-app.use(express.static(path.join(__dirname,'public')));
-
-// Lectura y parseo del body
-app.use(express.json());
-
-// app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
 //CORS
 app.use(cors());
 
-//Rutas privadas
+//Public route
+app.use(express.static(path.join(__dirname,'public')));
+
+// Reading and parsing body
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
+//Private route
 app.use('/api/product', require('./routes/product'));
 
 

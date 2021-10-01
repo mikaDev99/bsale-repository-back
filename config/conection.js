@@ -9,7 +9,7 @@ const sequelize = new Sequelize( 'bsale_test', 'bsale_test', 'bsale_test',{
 const conectionDB = async() => {
     try {
         await sequelize.authenticate();
-        console.log('Conecction sussesful');
+        console.log('Successful connection'); //Connection work!
     } catch (error) {
         console.error('Unable to connect to the database', error);
     }
